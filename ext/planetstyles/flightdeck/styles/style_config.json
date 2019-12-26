@@ -1,0 +1,118 @@
+{
+	"Logo Type": {
+		"name": "header_structure",
+		"type": "list",
+		"help": "Text uses forum's sitename and description. Option defaults to 'logo and text' if unselected here.",
+		"values": [
+			"Logo Only",
+			"Text Only",
+			"Logo and Text"
+		]
+	},
+	"Header Background Repeat": {
+		"name": "header_repeat",
+		"type": "list",
+		"help": "Repeats the header background image. Default value: 'none'.",
+		"values": [
+			"repeat-x",
+			"repeat-y",
+			"repeat",
+			"no-repeat"
+		]
+	},
+	"Header Background Position": {
+		"name": "header_position",
+		"type": "list",
+		"help": "Sets position for header background. Default value: 'middle top'.",
+		"values": [
+			"left top",
+			"left center",
+			"left bottom",
+			"center top",
+			"center center",
+			"center bottom",
+			"right top",
+			"right center",
+			"right bottom"
+		]
+	},
+	"Header Tint?": {
+		"name": "header_tint",
+		"type": "bool",
+		"help": "Applies a dark tint over the header background. Useful for bright header backgrounds. Default value: No."			
+	},		
+	"Stretch header background to fill space?": {
+		"name": "header_size",
+		"type": "bool",
+		"help": "Stretches background image to fill header space. Only recommended for large backgrounds that don't repeat. Default value: No."			
+	},					
+	"Navbar Colour": {
+		"name": "navbar_colour",
+		"type": "list",
+		"help": "Navigation that runs along the top of the forum. Defaults to 'dark' if unselected here.",
+		"values": [
+			"Dark",
+			"Light",
+			"Transparent"
+		]
+	},
+	"Theme Accent Colour": {
+		"name": "advanced_accent_colour",
+		"help": "Select colour of category headers, links and buttons.",		
+		"type": "string" 
+	},
+	"High contrast footer links?": {
+		"name": "footer_link_contrast",
+		"type": "bool",
+		"help": "Enable this if you have selected a dark accent colour above." 
+	},	
+	"Forum Width": {
+		"name": "forum_width",
+		"help": "Must be fixed width (px) or fluid (%). Recommended values: 1200px or 95%. Defaults to 95% if unselected here.",		
+		"type": "string" 
+	},	
+	"Enable Right Sidebar?": {
+		"name": "right_sidebar",
+		"type": "bool",
+		"help": "Content sidebar showing on all pages. Content set in code block below. Defaults to 'off' if unselected here." 
+	},
+	"Enable Social bar?": {
+		"name": "socialbar",
+		"type": "bool",
+		"help": "Footer strip showing social links. Defaults to 'on' if unselected here."
+	},	
+	"Enable Scroll to Top button?": {
+		"name": "scroll_to_top",
+		"help": "Adds a scroll to top shortcut on long pages. Default setting: No",
+		"type": "bool"
+	},
+	"Enable Collapsible Panels": {
+		"name": "collapsible_panels",
+		"help": "Allows users to collapse / expand forum categories. Default setting: No",		
+		"type": "bool"
+	},
+	"Show topic creation time on viewforum?": {
+		"name": "show_topic_creation_time",
+		"help": "Displays the time/date a topic was created. Clutters layout. Default setting: No",		
+		"type": "bool"
+	},
+	"Postprofile Side": {
+		"name": "postprofile_side",
+		"help": "Sets which side avatars / post counts display on when reading a topic. Default setting: Left.",		
+		"type": "list",
+		"values": [
+			"Left",
+			"Right"
+		]
+	},
+	"Show user 'Joined' date on viewtopic?": {
+		"name": "join_date_viewtopic",
+		"type": "bool",
+		"help": "Displays the user's 'joined' date below avatar. Clutters layout. Default setting: No"			
+	},
+	"Hide PlanetStyles link in footer?": {
+		"name": "credit_line",
+		"type": "bool",
+		"help": "We'd rather you didn't, but it's OK if you really want to :)"
+	}	
+}

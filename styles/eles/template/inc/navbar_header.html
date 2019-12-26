@@ -1,0 +1,58 @@
+<ul id="nav-breadcrumbs" class="linklist navlinks{% if C_SOCIAL_LINKS_ON %} has-social-links{% endif %}" role="menubar">
+  <!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
+  <!-- EVENT overall_header_breadcrumbs_before -->
+  <li class="small-icon icon-home breadcrumbs">
+    <!-- IF U_SITE_HOME --><span class="crumb"{$MICRODATA}><a href="{U_SITE_HOME}" data-navbar-reference="home" itemprop="url"><span itemprop="title">{L_SITE_HOME}</span></a></span><!-- ENDIF -->
+    <!-- EVENT overall_header_breadcrumb_prepend -->
+    <span class="crumb"{$MICRODATA}><a href="{U_INDEX}" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">{L_INDEX}</span></a></span>
+    <!-- BEGIN navlinks -->
+      <!-- EVENT overall_header_navlink_prepend -->
+      <span class="crumb"{$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->><a href="{navlinks.U_VIEW_FORUM}" itemprop="url"><span itemprop="title">{navlinks.FORUM_NAME}</span></a></span>
+      <!-- EVENT overall_header_navlink_append -->
+    <!-- END navlinks -->
+    <!-- EVENT overall_header_breadcrumb_append -->
+  </li>
+  <!-- EVENT overall_header_breadcrumbs_after -->
+
+  {#
+  <!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+    <li class="rightside responsive-search" style="display: none;"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}" role="menuitem">{L_SEARCH}</a></li>
+  <!-- ENDIF -->
+  #}
+</ul>
+
+<!-- IF C_SOCIAL_LINKS_ON -->
+  <ul class="social-links col-xs-4">
+  <!-- BEGIN c_social_links -->
+    <!-- IF c_social_links.ON -->
+      <li id="social-link-{c_social_links.ID}">
+        <a href="{c_social_links.URL}" title="{c_social_links.TITLE}">
+          <!-- IF c_social_links.ID == "facebook"  -->
+            <i class="fa fa-facebook-official"></i>
+          <!-- ELSE IF c_social_links.ID == "twitter"  -->
+            <i class="fa fa-twitter"></i>
+          <!-- ELSE IF c_social_links.ID == "google-plus"  -->
+            <i class="fa fa-google-plus"></i>
+          <!-- ELSE IF c_social_links.ID == "pinterest"  -->
+            <i class="fa fa-pinterest"></i>
+          <!-- ELSE IF c_social_links.ID == "youtube"  -->
+            <i class="fa fa-youtube-play"></i>
+          <!-- ELSE IF c_social_links.ID == "linkedin"  -->
+            <i class="fa fa-linkedin"></i>
+          <!-- ELSE IF c_social_links.ID == "github"  -->
+            <i class="fa fa-github"></i>
+          <!-- ELSE IF c_social_links.ID == "instagram"  -->
+            <i class="fa fa-instagram"></i>
+          <!-- ELSE IF c_social_links.ID == "steam"  -->
+            <i class="fa fa-steam"></i>
+          <!-- ELSE IF c_social_links.ID == "twitch"  -->
+            <i class="fa fa-twitch"></i>
+          <!-- ELSE -->
+            <i class="fa fa-share-alt"></i>
+          <!-- ENDIF -->
+        </a>
+    </li>
+    <!-- ENDIF -->
+  <!-- END c_social_links -->
+  </ul>
+<!-- ENDIF -->

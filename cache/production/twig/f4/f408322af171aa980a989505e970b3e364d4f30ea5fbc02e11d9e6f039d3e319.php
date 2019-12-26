@@ -1,0 +1,393 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* ucp_header.html */
+class __TwigTemplate_235da383f54e0783fc78886413f2bc146be79730ae9896d0714a883f1add9df3 extends \Twig\Template
+{
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        // line 1
+        $location = "overall_header.html";
+        $namespace = false;
+        if (strpos($location, '@') === 0) {
+            $namespace = substr($location, 1, strpos($location, '/') - 1);
+            $previous_look_up_order = $this->env->getNamespaceLookUpOrder();
+            $this->env->setNamespaceLookUpOrder(array($namespace, '__main__'));
+        }
+        $this->loadTemplate("overall_header.html", "ucp_header.html", 1)->display($context);
+        if ($namespace) {
+            $this->env->setNamespaceLookUpOrder($previous_look_up_order);
+        }
+        // line 2
+        echo "
+<h2 class=\"ucp-title\">";
+        // line 3
+        echo $this->env->getExtension('phpbb\template\twig\extension')->lang("UCP");
+        echo "</h2>
+
+<div id=\"tabs\">
+\t<ul>
+\t\t";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["loops"] ?? null), "t_block1", []));
+        foreach ($context['_seq'] as $context["_key"] => $context["t_block1"]) {
+            // line 8
+            echo "\t\t<li class=\"tab";
+            if ($this->getAttribute($context["t_block1"], "S_SELECTED", [])) {
+                echo " activetab";
+            }
+            echo "\"><a href=\"";
+            echo $this->getAttribute($context["t_block1"], "U_TITLE", []);
+            echo "\">";
+            echo $this->getAttribute($context["t_block1"], "L_TITLE", []);
+            echo "</a></li>
+\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t_block1'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 10
+        echo "\t</ul>
+</div>
+
+";
+        // line 13
+        if (($context["S_COMPOSE_PM"] ?? null)) {
+            // line 14
+            echo "<form id=\"postform\" method=\"post\" action=\"";
+            echo ($context["S_POST_ACTION"] ?? null);
+            echo "\"";
+            echo ($context["S_FORM_ENCTYPE"] ?? null);
+            echo ">
+";
+        }
+        // line 16
+        echo "
+<div class=\"panel bg3\">
+\t<div class=\"inner\">
+
+\t<div style=\"width: 100%;\">
+
+\t<div id=\"cp-menu\">
+\t\t<div id=\"navigation\" role=\"navigation\">
+
+\t\t";
+        // line 25
+        if (($context["S_PRIVMSGS"] ?? null)) {
+            // line 26
+            echo "\t\t\t";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["loops"] ?? null), "t_block2", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["t_block2"]) {
+                // line 27
+                echo "\t\t\t\t";
+                if ((($context["S_PRIVMSGS"] ?? null) &&  !$this->getAttribute($context["t_block2"], "S_LAST_ROW", []))) {
+                    // line 28
+                    echo "\t\t\t\t<ul>
+\t\t\t\t\t";
+                    // line 29
+                    if ($this->getAttribute($context["t_block2"], "S_SELECTED", [])) {
+                        // line 30
+                        echo "\t\t\t\t\t\t<li id=\"active-subsection\"><a href=\"";
+                        echo $this->getAttribute($context["t_block2"], "U_TITLE", []);
+                        echo "\"><span>";
+                        echo $this->getAttribute($context["t_block2"], "L_TITLE", []);
+                        echo "</span></a></li>
+\t\t\t\t\t";
+                    } else {
+                        // line 32
+                        echo "\t\t\t\t\t\t<li><a href=\"";
+                        echo $this->getAttribute($context["t_block2"], "U_TITLE", []);
+                        echo "\"><span>";
+                        echo $this->getAttribute($context["t_block2"], "L_TITLE", []);
+                        echo "</span></a></li>
+\t\t\t\t\t";
+                    }
+                    // line 34
+                    echo "\t\t\t\t</ul>
+\t\t\t\t";
+                }
+                // line 36
+                echo "\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t_block2'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 37
+            echo "
+\t\t\t";
+            // line 38
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["loops"] ?? null), "folder", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["folder"]) {
+                // line 39
+                echo "\t\t\t\t";
+                if ($this->getAttribute($context["folder"], "S_FIRST_ROW", [])) {
+                    echo "<ul>";
+                }
+                // line 40
+                echo "\t\t\t\t";
+                if ($this->getAttribute($context["folder"], "S_CUR_FOLDER", [])) {
+                    // line 41
+                    echo "\t\t\t\t\t<li id=\"active-subsection\"><a href=\"";
+                    echo $this->getAttribute($context["folder"], "U_FOLDER", []);
+                    echo "\">";
+                    if (($this->getAttribute($context["folder"], "UNREAD_MESSAGES", []) > 0)) {
+                        echo "<strong>";
+                        echo $this->getAttribute($context["folder"], "FOLDER_NAME", []);
+                        echo " (";
+                        echo $this->getAttribute($context["folder"], "UNREAD_MESSAGES", []);
+                        echo ")</strong>";
+                    } else {
+                        echo $this->getAttribute($context["folder"], "FOLDER_NAME", []);
+                    }
+                    echo "</a></li>
+\t\t\t\t";
+                } else {
+                    // line 43
+                    echo "\t\t\t\t\t<li><a href=\"";
+                    echo $this->getAttribute($context["folder"], "U_FOLDER", []);
+                    echo "\"><span>";
+                    if (($this->getAttribute($context["folder"], "UNREAD_MESSAGES", []) > 0)) {
+                        echo "<strong>";
+                        echo $this->getAttribute($context["folder"], "FOLDER_NAME", []);
+                        echo " (";
+                        echo $this->getAttribute($context["folder"], "UNREAD_MESSAGES", []);
+                        echo ")</strong>";
+                    } else {
+                        echo $this->getAttribute($context["folder"], "FOLDER_NAME", []);
+                    }
+                    echo "</span></a></li>
+\t\t\t\t";
+                }
+                // line 45
+                echo "\t\t\t\t";
+                if ($this->getAttribute($context["folder"], "S_LAST_ROW", [])) {
+                    echo "</ul>";
+                }
+                // line 46
+                echo "\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['folder'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 47
+            echo "\t\t";
+        }
+        // line 48
+        echo "
+\t\t\t<ul>
+\t\t";
+        // line 50
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["loops"] ?? null), "t_block2", []));
+        foreach ($context['_seq'] as $context["_key"] => $context["t_block2"]) {
+            // line 51
+            echo "\t\t\t";
+            if (((($context["S_PRIVMSGS"] ?? null) && $this->getAttribute($context["t_block2"], "S_LAST_ROW", [])) ||  !($context["S_PRIVMSGS"] ?? null))) {
+                // line 52
+                echo "\t\t\t\t";
+                if ($this->getAttribute($context["t_block2"], "S_SELECTED", [])) {
+                    // line 53
+                    echo "\t\t\t\t\t<li id=\"active-subsection\"><a href=\"";
+                    echo $this->getAttribute($context["t_block2"], "U_TITLE", []);
+                    echo "\"><span>";
+                    echo $this->getAttribute($context["t_block2"], "L_TITLE", []);
+                    echo "</span></a></li>
+\t\t\t\t";
+                } else {
+                    // line 55
+                    echo "\t\t\t\t\t<li><a href=\"";
+                    echo $this->getAttribute($context["t_block2"], "U_TITLE", []);
+                    echo "\"><span>";
+                    echo $this->getAttribute($context["t_block2"], "L_TITLE", []);
+                    echo "</span></a></li>
+\t\t\t\t";
+                }
+                // line 57
+                echo "\t\t\t";
+            }
+            // line 58
+            echo "\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t_block2'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 59
+        echo "\t\t\t</ul>
+\t\t</div>
+
+\t\t";
+        // line 62
+        if ((twig_length_filter($this->env, $this->getAttribute(($context["loops"] ?? null), "friends_online", [])) || twig_length_filter($this->env, $this->getAttribute(($context["loops"] ?? null), "friends_offline", [])))) {
+            // line 63
+            echo "\t\t<div class=\"cp-mini\">
+\t\t\t<div class=\"inner\">
+
+\t\t\t<dl class=\"mini\">
+\t\t\t\t<dt>";
+            // line 67
+            echo $this->env->getExtension('phpbb\template\twig\extension')->lang("FRIENDS");
+            echo "</dt>
+
+\t\t\t\t";
+            // line 69
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["loops"] ?? null), "friends_online", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["friends_online"]) {
+                // line 70
+                echo "\t\t\t\t\t<dd class=\"friend-online\" title=\"";
+                echo $this->env->getExtension('phpbb\template\twig\extension')->lang("FRIENDS_ONLINE");
+                echo "\">";
+                echo $this->getAttribute($context["friends_online"], "USERNAME_FULL", []);
+                echo " ";
+                if (($context["S_SHOW_PM_BOX"] ?? null)) {
+                    echo " <input type=\"submit\" name=\"add_to[";
+                    echo $this->getAttribute($context["friends_online"], "USER_ID", []);
+                    echo "]\" value=\"";
+                    echo $this->env->getExtension('phpbb\template\twig\extension')->lang("ADD");
+                    echo "\" class=\"button2\" />";
+                }
+                if (($this->getAttribute($context["friends_online"], "S_LAST_ROW", []) && twig_length_filter($this->env, $this->getAttribute(($context["loops"] ?? null), "friends_offline", [])))) {
+                    echo "<hr />";
+                }
+                echo "</dd>
+\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['friends_online'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 72
+            echo "
+\t\t\t\t";
+            // line 73
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["loops"] ?? null), "friends_offline", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["friends_offline"]) {
+                // line 74
+                echo "\t\t\t\t\t<dd class=\"friend-offline\" title=\"";
+                echo $this->env->getExtension('phpbb\template\twig\extension')->lang("FRIENDS_OFFLINE");
+                echo "\">";
+                echo $this->getAttribute($context["friends_offline"], "USERNAME_FULL", []);
+                echo " ";
+                if (($context["S_SHOW_PM_BOX"] ?? null)) {
+                    echo "<input type=\"submit\" name=\"add_to[";
+                    echo $this->getAttribute($context["friends_offline"], "USER_ID", []);
+                    echo "]\" value=\"";
+                    echo $this->env->getExtension('phpbb\template\twig\extension')->lang("ADD");
+                    echo "\" class=\"button2\" />";
+                }
+                echo "</dd>
+\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['friends_offline'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 76
+            echo "\t\t\t</dl>
+
+\t\t\t</div>
+\t\t</div>
+\t\t";
+        }
+        // line 81
+        echo "
+\t\t";
+        // line 82
+        if (($context["S_SHOW_COLOUR_LEGEND"] ?? null)) {
+            // line 83
+            echo "\t\t<div class=\"cp-mini\">
+\t\t\t<div class=\"inner\">
+
+\t\t\t<dl class=\"mini\">
+\t\t\t\t<dt>";
+            // line 87
+            echo $this->env->getExtension('phpbb\template\twig\extension')->lang("MESSAGE_COLOURS");
+            echo "</dt>
+\t\t\t\t";
+            // line 88
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["loops"] ?? null), "pm_colour_info", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["pm_colour_info"]) {
+                // line 89
+                echo "\t\t\t\t\t<dd class=\"pm-legend";
+                if ($this->getAttribute($context["pm_colour_info"], "CLASS", [])) {
+                    echo " ";
+                    echo $this->getAttribute($context["pm_colour_info"], "CLASS", []);
+                }
+                echo "\">";
+                if ($this->getAttribute($context["pm_colour_info"], "IMG", [])) {
+                    echo $this->getAttribute($context["pm_colour_info"], "IMG", []);
+                    echo " ";
+                }
+                echo $this->getAttribute($context["pm_colour_info"], "LANG", []);
+                echo "</dd>
+\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pm_colour_info'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 91
+            echo "\t\t\t</dl>
+
+\t\t\t</div>
+\t\t</div>
+\t\t";
+        }
+        // line 96
+        echo "
+\t</div>
+
+\t<div id=\"cp-main\" class=\"ucp-main panel-container\">
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "ucp_header.html";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  359 => 96,  352 => 91,  334 => 89,  330 => 88,  326 => 87,  320 => 83,  318 => 82,  315 => 81,  308 => 76,  289 => 74,  285 => 73,  282 => 72,  260 => 70,  256 => 69,  251 => 67,  245 => 63,  243 => 62,  238 => 59,  232 => 58,  229 => 57,  221 => 55,  213 => 53,  210 => 52,  207 => 51,  203 => 50,  199 => 48,  196 => 47,  190 => 46,  185 => 45,  169 => 43,  153 => 41,  150 => 40,  145 => 39,  141 => 38,  138 => 37,  132 => 36,  128 => 34,  120 => 32,  112 => 30,  110 => 29,  107 => 28,  104 => 27,  99 => 26,  97 => 25,  86 => 16,  78 => 14,  76 => 13,  71 => 10,  56 => 8,  52 => 7,  45 => 3,  42 => 2,  30 => 1,);
+    }
+
+    /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
+    public function getSource()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getSourceContext() instead.', E_USER_DEPRECATED);
+
+        return $this->getSourceContext()->getCode();
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("", "ucp_header.html", "");
+    }
+}

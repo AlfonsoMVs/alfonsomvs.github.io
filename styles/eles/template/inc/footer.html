@@ -1,0 +1,55 @@
+<div class="navbar bottom" role="navigation">
+  <div class="inner{% if C_LAYOUT_MODE === "contained" %} container{% endif %}">
+  <!-- INCLUDE navbar_footer.html -->
+  </div>
+</div>
+
+<div class="footer-inner{% if C_LAYOUT_MODE === "contained" %} container{% endif %}">
+
+  <div class="row">
+  <!-- BEGIN c_footer_widgets -->
+    <!-- IF c_footer_widgets.WID !== "none" -->
+
+    <!-- IF c_footer_widgets.S_ROW_COUNT == 0 -->
+      {% set WF_CLASS = 'col-sm-4' %}
+    <!-- ELSE IF c_footer_widgets.S_ROW_COUNT == 1 -->
+      {% set WF_CLASS = 'col-sm-5' %}
+    <!-- ELSE IF c_footer_widgets.S_ROW_COUNT == 2 -->
+      {% set WF_CLASS = 'col-sm-3' %}
+    <!-- ENDIF -->
+
+    <div class="widget footer-widget widget-{c_footer_widgets.WID} {WF_CLASS}">
+      <!-- IF c_footer_widgets.TITLE -->
+        <h3 class="widget-title">{c_footer_widgets.TITLE}</h3>
+      <!-- ENDIF -->
+      <div class="widget-body">
+        <!-- DEFINE $OPT = 'c_footer_widgets' -->
+        {% include "@eles_coreframe/inc/widgets.html" %}
+      </div>
+    </div>
+    <!-- ENDIF -->
+  <!-- END c_footer_widgets -->
+  </div>
+
+</div>
+
+<div class="endbar">
+  <div class="inner{% if C_LAYOUT_MODE === "contained" %} container{% endif %}">
+    <!-- EVENT overall_footer_copyright_prepend -->
+
+    {% if C_COPYRIGHT_ON %}
+    <p class="copyright{% if C_COPYRIGHT_TEXT %} left col-sm-6{% endif %}">
+      Powered by <a href="https://www.phpbb.com/" target="_blank">phpBB</a>.
+      Theming with <i class="fa fa-heart animate-pulse"></i> by
+      <a href="{U_THEME}" title="Eles - Responsive phpBB 3.1 Theme" target="_blank">Eles Theme</a>.
+    </p>
+    {% endif %}
+    {% if C_COPYRIGHT_TEXT %}
+      <p class="copyright{% if C_COPYRIGHT_ON %} right col-sm-6{% endif %}">
+        {C_COPYRIGHT_TEXT}
+      </p>
+    {% endif %}
+    <!-- EVENT overall_footer_copyright_append -->
+  </div>
+</div>
+
